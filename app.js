@@ -13,7 +13,7 @@ function getmyfileplz(url) {
 		res.pipe(file);
 
 		res.once('data', function() {
-			console.log('beginning download...');
+			console.log('downloading...');
 		});
 
 		res.on('end', function() {

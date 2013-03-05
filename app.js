@@ -2,8 +2,8 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-function getmyfileplz(url) {
-  
+  function getmyfileplz(url) {
+
   var file = fs.createWriteStream(path.basename(url));
 
   http.get(url, function(res) {
@@ -33,4 +33,7 @@ function getmyfileplz(url) {
   });
 }
 
-getmyfileplz('http://twitter.github.com/bootstrap/assets/bootstrap.zip');
+// get url link from arguments
+var link = process.argv.slice(2).toString();
+
+getmyfileplz(link);
